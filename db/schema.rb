@@ -12,8 +12,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 20_241_103_220_538) do
+ActiveRecord::Schema[7.1].define(version: 20_241_103_224_139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'pgcrypto'
   enable_extension 'plpgsql'
+
+  create_table 'lounge_owners', id: :uuid, default: -> { 'gen_random_uuid()' }, force: :cascade do |t|
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'first_name', default: '', null: false
+    t.string 'last_name', default: '', null: false
+    t.string 'phone_number'
+    t.date 'date_of_birth', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_lounge_owners_on_email', unique: true
+    t.index ['reset_password_token'], name: 'index_lounge_owners_on_reset_password_token', unique: true
+  end
 end
