@@ -4,4 +4,6 @@ class MarketingController < ApplicationController
   def root; end
 
   def pricing; end
+
+  def faq; end
 end
