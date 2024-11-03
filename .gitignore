@@ -36,3 +36,5 @@
 
 # Ignore history file for commands.
 .history
+/app/assets/builds/*
+!/app/assets/builds/.keep
