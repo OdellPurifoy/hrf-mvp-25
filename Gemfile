@@ -38,6 +38,12 @@ gem "jbuilder"
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
+# Add faker for seed data
+gem 'faker'
+
+# Add Rubocop for linting
+gem 'rubocop', require: false
+
 # Add Tailwind CSS
 gem "tailwindcss-rails"
 
